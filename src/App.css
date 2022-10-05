@@ -14,10 +14,18 @@ html, body {
   --transition-speed: 200ms;
   --light-gray: hsl(204, 7%, 9%);
   --dark-gray: hsl(204, 7%, 4%);
+  --bright-gray: hsl(204, 7%, 24%);
   --transparent: #ffffff00;
   --transparent-gray: rgba(24, 26, 31, 0.8);
-  --gray-tertiary: hsl(204, 7%, 24%);
   --white: #ffffff;
+}
+
+[data-theme=dark] {
+  --light-gray: hsl(204, 7%, 91%);
+  --dark-gray: hsl(204, 7%, 96%);
+  --bright-gray: hsl(204, 7%, 76%);
+  --transparent-gray: rgba(244, 245, 246, 0.8);
+  --white: hsl(204, 7%, 4%);
 }
 
 .navbar {
@@ -44,6 +52,12 @@ html, body {
   margin-right: 2.5rem;
   display: inline-block;
   position: relative;
+  /**@media (max-width: 768px) {
+      &:nth-of-type(2) {
+          margin-right: 6rem;
+          cursor: pointer;
+      }
+  }*/
 }
 .navbar .navbar-nav .nav-item:first-of-type {
   margin-left: 6rem;
@@ -56,12 +70,6 @@ html, body {
 }
 .navbar .navbar-nav .nav-item:nth-of-type(2) {
   margin-right: 1rem;
-}
-@media (max-width: 768px) {
-  .navbar .navbar-nav .nav-item:nth-of-type(2) {
-    margin-right: 6rem;
-    cursor: pointer;
-  }
 }
 .navbar .navbar-nav .nav-item .nav-link {
   color: var(--white);
@@ -131,7 +139,7 @@ html, body {
   margin: 0 auto;
   height: 100vh;
   background-color: var(--dark-gray);
-  background: linear-gradient(to top right, var(--dark-gray) 0%, var(--gray-tertiary) 160%);
+  background: linear-gradient(to top right, var(--dark-gray) 0%, var(--bright-gray) 160%);
   font-family: poppins, sans-serif;
   font-weight: 500;
   font-style: normal;
@@ -294,7 +302,7 @@ html, body {
   font-size: 1.75rem;
 }
 .sidebar .sidebar-nav .side-item:first-of-type {
-  padding: 2.2rem 2.6rem 0rem 0rem;
+  padding: 2.2rem 1.6rem 0rem 0rem;
   position: absolute;
   top: 0;
   right: 0;

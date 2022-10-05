@@ -17,14 +17,11 @@ const sidebarButtons =
     </>
 
 const navbarItems = [{
-    item: <img className="logo" src={logo} alt="logo" />,
+    item: <Button content="login">Login</Button>,
     id: 0
 }, {
-    item: <Button content="login">Login</Button>,
-    id: 1
-}, {
     item: <Button content="courses">Courses</Button>,
-    id: 2
+    id: 1
 }];
 
 const sideIcons = [{

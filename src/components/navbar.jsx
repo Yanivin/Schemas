@@ -1,5 +1,7 @@
 import React from 'react';
 import { navbarItems } from "./data/data";
+import logo from '../brand.png';
+import logoDark from '../brandDark.png';
 
 const Navbar = ({ onClick }) => {
     const listItems = navbarItems.map(element =>
@@ -13,6 +15,11 @@ const Navbar = ({ onClick }) => {
     return (
         <nav className="navbar">
             <ul className='navbar-nav'>
+                <li className='nav-item'>
+                    <a href="#" className="nav-link">
+                    <span className='logo'></span>
+                    </a>
+                </li>
                 {listItems}
                 <li className='nav-item'>
                     <a className='nav-link' href="#" onClick={onClick}>
