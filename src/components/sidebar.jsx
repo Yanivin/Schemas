@@ -1,14 +1,19 @@
 import React from 'react';
-import { sideIcons, sidebarButtons } from "./data/data";
+import { sideIcons } from "./data/data";
+import { useMediaQuery } from 'react-responsive'
 
 const Sidebar = ({ show, onClick }) => {
-    const listIcons = sideIcons.map(icon =>
-        <li onClick={() => console.log('Clicking!')} key={icon.id} className='side-item'>
-            <a href="#" className="side-link" tabIndex="-1">
-                {icon.name}
+    const isLargeScreen = useMediaQuery({ query: '(min-width: 768px)' })
+
+    let listItems = sideIcons.map(item =>
+        <li  className='side-item' onClick={() => console.log('Clicking!')} key={item.id}>
+            <a href="#" className="side-link">
+                {item.name}
             </a>
         </li>
     );
+
+    isLargeScreen ? listItems = listItems.slice(0, 4) : listItems = listItems;
 
     return (
         <nav className={show ? 'sidebar' : 'sidebar active'}>
@@ -21,8 +26,7 @@ const Sidebar = ({ show, onClick }) => {
                     <hr className='row bar-3'>
                     </hr>
                 </li>
-                {listIcons}
-                {sidebarButtons}
+                {listItems}
             </ul>
         </nav>
     )

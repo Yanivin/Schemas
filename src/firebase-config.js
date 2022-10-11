@@ -4,13 +4,13 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAPfuAC5hyVhFArdh4hvoXSz8IfG3BVETQ",
-  authDomain: "learnwithpi.firebaseapp.com",
-  projectId: "learnwithpi",
-  storageBucket: "learnwithpi.appspot.com",
-  messagingSenderId: "1044299535535",
-  appId: "1:1044299535535:web:5e9e32ebdba6a1c48c705a",
-  measurementId: "G-0BNEW9KCV2"
+  apiKey: process.env.PUBLIC_API_KEY,
+  authDomain: process.env.PUBLIC_AUTH_DOMAIN,
+  projectId: process.env.PUBLIC_PROJECT_ID,
+  storageBucket: process.env.PUBLIC_STORAGE_BUCKET,
+  messagingSenderId: process.env.PUBLIC_MESSAGING_SENDER_ID,
+  appId: process.env.PUBLIC_APP_ID,
+  measurementId: process.env.PUBLIC_MEASUREMENT_ID,
 };
 
 // Initialize Firebase

@@ -1,10 +1,11 @@
 import React from 'react';
 import { navbarItems } from "./data/data";
-import logo from '../brand.png';
-import logoDark from '../brandDark.png';
+import { useMediaQuery } from 'react-responsive'
 
 const Navbar = ({ onClick }) => {
-    const listItems = navbarItems.map(element =>
+    const isMediumScreen = useMediaQuery({ query: '(max-width: 768px)' })
+
+    let listItems = navbarItems.map(element =>
         <li className='nav-item' key={element.id}>
             <a href="#" className="nav-link">
                 {element.item}
@@ -12,14 +13,11 @@ const Navbar = ({ onClick }) => {
         </li>
     );
 
+    isMediumScreen ? listItems = listItems.slice(0, 1) : listItems = listItems;
+
     return (
         <nav className="navbar">
             <ul className='navbar-nav'>
-                <li className='nav-item'>
-                    <a href="#" className="nav-link">
-                    <span className='logo'></span>
-                    </a>
-                </li>
                 {listItems}
                 <li className='nav-item'>
                     <a className='nav-link' href="#" onClick={onClick}>
